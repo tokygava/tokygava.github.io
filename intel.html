@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru" id="top" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Мини‑сайт о процессорах Intel: Core и Xeon.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Intel — линейки процессоров</title>
+
+  <link rel="icon" href="assets/favicon_intel.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles_intel.css">
+  <script defer src="script_intel.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="На главную">
+        <span class="logo-text">Intel</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Открыть меню">
+          <span class="bars" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-menu" class="menu">
+          <li><a href="#overview">Обзор</a></li>
+          <li><a href="#products">Процессоры</a></li>
+          <li><a href="#history">История</a></li>
+          <li><a href="Main.html">Главная</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Переключить тему">
+        <span class="sun" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Герой -->
+    <section id="overview" class="hero section-pad" aria-label="Обзор Intel">
+      <div class="container hero-inner">
+        <h1>Процессоры Intel для ПК, ноутбуков и серверов</h1>
+        <p class="lead">
+          Линейки <strong>Intel Core</strong> и <strong>Xeon</strong> с гибридной архитектурой,
+          производительными и энергоэффективными ядрами.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#products">Смотреть процессоры</a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          <li><span class="dot"></span>Процессоры Intel Core для игр и работы</li>
+          <li><span class="dot"></span>Серверные решения Intel Xeon</li>
+          <li><span class="dot"></span>Технологии Hyper‑Threading и Turbo Boost</li>
+        </ul>
+      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- Продукты -->
+    <section id="products" class="section-pad">
+      <div class="container">
+        <header class="section-head">
+          <h2>Процессоры Intel</h2>
+        </header>
+        <div class="filters" role="toolbar" aria-label="Фильтр процессоров Intel">
+          <button class="pill is-active" data-filter="all" aria-pressed="true">Все</button>
+          <button class="pill" data-filter="desktop" aria-pressed="false">Для ПК</button>
+          <button class="pill" data-filter="laptop" aria-pressed="false">Для ноутбуков</button>
+          <button class="pill" data-filter="server" aria-pressed="false">Серверные</button>
+          <div class="spacer"></div>
+          <label class="search">
+            <input type="search" id="search" placeholder="Поиск по названию…" aria-label="Поиск по процессорам Intel">
+          </label>
+        </div>
+
+        <!-- ВАЖНО: здесь flex, не grid -->
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        <p id="product-empty" class="muted hidden" aria-live="polite">
+          Ничего не найдено. Измените фильтры или запрос.
+        </p>
+      </div>
+    </section>
+
+    <!-- История -->
+    <section id="history" class="section-pad">
+      <div class="container">
+        <header class="section-head">
+          <h2>Краткая история Intel</h2>
+          <p class="muted">Несколько ключевых этапов развития компании.</p>
+        </header>
+
+        <ol class="timeline">
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>1968 — Основание Intel</h3>
+              <p>Компания основана Робертом Нойсом и Гордоном Муром.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>1971 — Intel 4004</h3>
+              <p>Один из первых коммерческих микропроцессоров.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>1993 — Pentium</h3>
+              <p>Знаковая линейка процессоров для массового рынка ПК.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>2006 — Intel Core</h3>
+              <p>Запуск линейки Core, ставшей основой большинства ПК и ноутбуков.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>2020+ — Гибридные архитектуры</h3>
+              <p>Комбинация производительных и энергоэффективных ядер в новых поколениях Core и Xeon.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Наверх" title="Наверх">↑</button>
+
+  <template id="product-card-template">
+    <article class="card product" data-type="">
+      <div class="product-icon" aria-hidden="true">></div>
+      <h3 class="card-title"></h3>
+      <p class="card-meta"></p>
+      <p class="card-desc"></p>
+    </article>
+  </template>
+</body>
+</html>

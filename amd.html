@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru" id="top" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Мини‑сайт о AMD: процессоры Ryzen и EPYC, видеокарты Radeon, ключевые технологии Zen и RDNA.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles_amd.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="На главную" >
+        <span class="logo-text">AMD</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Открыть меню">
+          <span class="bars" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-menu" class="menu">
+          <li><a href="#overview">Обзор</a></li>
+          <li><a href="#products">Продукты</a></li>
+          <li><a href="#history">История</a></li>
+          <li><a href="Main.html">Главная</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section id="overview" class="hero section-pad" aria-label="Обзор">
+      <div class="container hero-inner">
+        <h1>AMD — инновации в&nbsp;вычислениях и&nbsp;графике</h1>
+        <p class="lead">Процессоры <strong>Ryzen</strong> и <strong>EPYC</strong>, графика <strong>Radeon</strong> и архитектуры <strong>Zen</strong>, <strong>RDNA</strong>.</p>
+        <div class="cta">
+          <a class="btn primary" href="#products">Смотреть продукты</a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          <li><span class="dot"></span>CPU для ПК, ноутбуков и серверов</li>
+          <li><span class="dot"></span>Графические решения для игр и творчества</li>
+          <li><span class="dot"></span>Открытые инструменты и SDK для разработчиков</li>
+        </ul>
+      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <section id="products" class="section-pad">
+      <div class="container">
+        <header class="section-head">
+          <h2>Продукты</h2>
+        </header>
+
+        <div class="filters" role="toolbar" aria-label="Фильтр продуктов">
+          <button class="pill is-active" data-filter="all" aria-pressed="true">Все</button>
+          <button class="pill" data-filter="cpu" aria-pressed="false">Процессоры</button>
+          <button class="pill" data-filter="server" aria-pressed="false">Серверы</button>
+          <div class="spacer"></div>
+          <label class="search">
+            <input type="search" id="search" placeholder="Поиск по названию…" aria-label="Поиск по продуктам">
+          </label>
+        </div>
+
+        <div id="product-grid" class="grid" aria-live="polite"></div>
+        <p id="product-empty" class="muted hidden" aria-live="polite">Ничего не найдено. Измените фильтры или запрос.</p>
+      </div>
+    </section>
+
+    
+
+    <section id="history" class="section-pad">
+      <div class="container">
+        <header class="section-head">
+          <h2>История</h2>
+          <p class="muted">Основные этапы развития (кратко и неполно).</p>
+        </header>
+
+        <ol class="timeline">
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>1969 — Основание</h3>
+              <p>Advanced Micro Devices основана в Саннивейле, Калифорния.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>1999 — Athlon</h3>
+              <p>Первые массовые процессоры компании на 1&nbsp;ГГц завоёвывают популярность среди энтузиастов.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>2006 — Покупка ATI</h3>
+              <p>Слияние с ATI Technologies даёт старт бренду Radeon под крылом AMD.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>2017 — Возвращение Ryzen</h3>
+              <p>Архитектура Zen приносит заметный рост IPC и перезапуск линеек процессоров.</p>
+            </div>
+          </li>
+          <li>
+            <div class="dot" aria-hidden="true"></div>
+            <div class="content">
+              <h3>2020+ — RDNA&nbsp;2/3, Zen&nbsp;3/4</h3>
+              <p>Укрепление позиций в ПК, консолях, рабочих станциях и центрах обработки данных.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <button class="to-top" aria-label="Наверх" title="Наверх">↑</button>
+
+  <template id="product-card-template">
+    <article class="card product" data-type="">
+      <div class="product-icon" aria-hidden="true"></div>
+      <h3 class="card-title"></h3>
+      <p class="card-meta"></p>
+      <p class="card-desc"></p>
+    </article>
+  </template>
+</body>
+</html>
